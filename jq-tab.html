@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #323232;
+            font-size: 12px;
+            font-family: "微软雅黑";
+            padding: 100px;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .tab{
+            width: 400px;
+        }
+        .tab .tab-nav{
+            height: 30px;
+        }
+        .tab .tab-nav li{
+            float: left;
+            margin-right: 5px;
+            background-color: #767676;
+            border-radius: 3px 3px 0 0 ;
+        }
+        .tab .tab-nav li a{
+            display: block;
+            height: 30px;
+            padding: 0 20px;
+            color:#fff;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        .tab .tab-nav .actived{
+            background: #fff; /* 按钮选中状态时的背景颜色 */
+        }
+         .tab .tab-nav .actived a{
+             color:#777;      /* 按钮选中状态时的字体颜色 */
+         }
+        .tab .content-wrap{
+            background-color: #fff;
+            width: 600px;      /* 设置为图片的宽高 */
+            height: 400px;
+            padding: 5px;
+        }
+        .tab .content-wrap .content-item{
+            position: absolute;
+            display: none;
+            height: 400px;
+        }
+        .tab .content-wrap .current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="js-tab tab" data-config='{"trifferType": "click", "effect": "fade", "invoke": 2, "auto":false }'>
+        <ul class="tab-nav">
+            <li class="actived"><a href="javascript:void(0);">杨 幂</a></li>
+            <li><a href="#">迪丽热巴</a></li>
+            <li><a href="#">鹿 晗</a></li>
+            <li><a href="#">郑 爽</a></li>
+            <li><a href="#">杨 洋</a></li>
+        </ul>
+        <div class="content-wrap">
+            <div class="content-item current">
+                <img src="./images/1.jpg" alt="">
+            </div>
+            <div class="content-item">
+                <img src="./images/2.jpg" alt="">
+            </div>
+            <div class="content-item">
+                <img src="./images/3.jpg" alt="">
+            </div>
+            <div class="content-item">
+                <img src="./images/4.jpg" alt="">
+            </div>
+             <div class="content-item">
+                <img src="./images/5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+   
+   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+   <script src="./jq-tab.js"></script>
+   <script>
+       $(function(){
+            // var tab1 = new Tab($('.js-tab').eq(0));
+            // Tab.init($('.js-tab'));
+            // 注册成jQuery方法后调用
+            $('.js-tab').tab();  
+       });
+   </script>
+
+</body>
+</html>
